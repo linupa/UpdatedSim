@@ -19,12 +19,14 @@ public class UpdateSimPose extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-
+    System.out.println("initialize updatesimpose works");
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    System.out.println("execute updatesimpose works");
+
     m_driveSubsystem.m_fieldSim.setRobotPose(m_driveSubsystem.getPose());
   }
 
@@ -35,6 +37,6 @@ public class UpdateSimPose extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return false;
+    return true;
   }
 }

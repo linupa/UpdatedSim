@@ -47,6 +47,7 @@ public class Robot extends TimedRobot {
     // Flush NetworkTables every loop. This ensures that robot pose and other values
     // are sent during every loop iteration.
     setNetworkTablesFlushEnabled(true);
+    
 
   }
 
@@ -83,11 +84,14 @@ public class Robot extends TimedRobot {
   public void teleopPeriodic() {
     DriveSubsystem.joystickMovement(joy1);
     m_teleopCommand = m_robotContainer.getCommand();
+    System.out.println(m_teleopCommand.toString());
 
     // schedule the autonomous command (example)
     if (m_teleopCommand != null) {
       m_teleopCommand.schedule();
+      //System.out.println("hi hi hi hi this works");
     }
+
   }
 
   @Override
